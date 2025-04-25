@@ -14,7 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/spritespin@4.0.11/release/spritespin.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
  
-    
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     
     
     <script src="{{ asset('js/car360.js') }}"></script>
@@ -59,6 +59,24 @@
     <h2>{{$xe->ten_xe ?? null}}</h2>
     <div class="details-container">
         <div class="vehicle-images">
+        <div class="viewer-container text-center mt-4">
+    <button id="toggle-3d-view" class="btn btn-primary">
+        <i class="fas fa-cube"></i> Xem mô hình 3D
+    </button>
+</div>
+
+<!-- Khung hiển thị mô hình 3D -->
+<div id="model-viewer-container" class="text-center" style="margin-top: 20px; display: none;">
+    <model-viewer
+        id="car-3d-model"
+        src="{{ asset('models/2018_bmw_m5.glb') }}"
+        alt="3D Xe BMW"
+        auto-rotate
+        camera-controls
+        ar
+        style="width: 100%; max-width: 900px; height: 500px; margin: auto;">
+    </model-viewer>
+</div>
         
         <img src="{{ asset(($xe->hinhanhXe->mat_ben ?? 'images/car360/Mercedes/Mercedes_SZ223/01.jpg')) }}" alt="Side View" class="product-side">
 
@@ -91,4 +109,19 @@
         </div>
     </div>
 </div>
+@push('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const toggleBtn = document.getElementById('toggle-3d-view');
+        const viewer = document.getElementById('model-viewer-container');
+
+        toggleBtn.addEventListener('click', () => {
+            viewer.style.display = viewer.style.display === 'none' ? 'block' : 'none';
+            toggleBtn.innerHTML = viewer.style.display === 'block' 
+                ? '<i class="fas fa-times"></i> Đóng mô hình 3D' 
+                : '<i class="fas fa-cube"></i> Xem mô hình 3D';
+        });
+    });
+</script>
+@endpush
 @endsection
