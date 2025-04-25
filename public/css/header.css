@@ -1,0 +1,116 @@
+.section-header{
+    position: relative;
+    text-align: center;
+}
+.section-header h2{
+    position: relative;
+    font-size: 36px;
+    font-weight: 500;
+    padding-bottom: 35px;
+}
+.section-header h2:before {
+    position: absolute;
+    content: "";
+    width: 80px;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -42px;
+    background: #4e4ffa;
+}
+.section-header p{color: #444a57;text-transform: capitalize;margin-bottom:10px;}
+.section-header h2 span,.section-header p span{text-transform: lowercase;}
+
+/* section-header */
+
+/*=============Style css=========*/
+
+.btn-logout {
+    background: transparent;
+    border: none;
+    color: #fff; /* Hoặc #333 nếu nền sáng */
+    padding: 10px;
+    font-size: 16px;
+    text-decoration: underline;
+    cursor: pointer;
+    float: right; /* Căn lề phải */
+    transition: color 0.3s ease;
+}
+
+.btn-logout:hover {
+    color: #ff3333;
+}
+/*-------------------------------------
+        2. Top-area
+--------------------------------------*/
+nav.navbar.bootsnav {
+    background-color: transparent;
+    border-bottom: transparent;
+}
+.wrap-sticky nav.navbar.bootsnav.sticked {background-color: #000;box-shadow: 0 2px 5px rgba(0,0,0,.2);}
+
+/*.navbar-brand*/
+.navbar-header a.navbar-brand,.navbar-header a.navbar-brand:hover,.navbar-header a.navbar-brand:focus{
+    display: inline-block;
+    color: #fff;
+    font-size: 24px;
+    letter-spacing: 3px;
+    font-family: 'Rufina', serif;
+    font-weight: 700;
+    padding: 45px 0px;
+    text-transform:uppercase;
+}
+.navbar-header a.navbar-brand span{display: inline-block;color:#4e4ffa;text-transform:capitalize;}
+
+.wrap-sticky nav.navbar.bootsnav.sticked .navbar-header a.navbar-brand,.wrap-sticky nav.navbar.bootsnav.sticked .navbar-header a.navbar-brand:hover,.wrap-sticky nav.navbar.bootsnav.sticked .navbar-header a.navbar-brand:focus {padding:30px 0px;}
+/*.navbar-brand*/
+
+/*.nav li*/
+nav.navbar.bootsnav ul.nav > li > a {
+    color: #f5f7fa;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform:uppercase;
+    -webkit-transition: 0.3s linear; 
+    -moz-transition: 0.3s linear; 
+    -ms-transition: 0.3s linear; 
+    -o-transition: 0.3s linear; 
+    transition: 0.3s linear;
+}
+nav.navbar.bootsnav ul.nav > li > a {padding: 48px 21px;}
+nav.navbar.bootsnav ul.nav > li > a:hover,nav.navbar.bootsnav ul.nav > li > a:focus{color:#4e4ffa;}
+nav.navbar.bootsnav ul.nav > li.active>a {color: #4e4ffa;}
+
+nav.navbar.bootsnav ul.nav > li.dropdown > a.dropdown-toggle:after {
+    content: "";
+}
+nav.navbar.bootsnav ul.nav > li.dropdown span {
+    font-size: 8px;
+    margin-left: 15px;
+}
+.wrap-sticky nav.navbar.bootsnav.sticked ul.nav > li > a{padding:30px 25px;}
+/*.nav li*/
+
+/*.menu-ui-design*/
+.menu-ui-design{overflow-y:scroll;height: 350px;}
+.menu-ui-design::-webkit-scrollbar {
+    width:5px;
+}
+.menu-ui-design::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 8px #000;
+}
+.menu-ui-design::-webkit-scrollbar-thumb {
+  background-color: #4e4ffa;
+}
+/*.menu-ui-design*/
+
+/*.navbar-toggle */
+nav.navbar.bootsnav .navbar-toggle {
+    position: relative;
+    background-color: transparent;
+    border: 1px solid #4e4ffa;
+    padding: 10px;
+    top: 0;
+}
+nav.navbar.bootsnav .navbar-toggle i{color: #4e4ffa;}
+/*.navbar-toggle */

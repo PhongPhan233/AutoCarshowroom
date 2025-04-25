@@ -1,0 +1,141 @@
+body {
+    font-family: Arial,sans-serif;
+}
+.service-box {
+    margin-top: 50%;
+    text-align: center;
+    padding: 30px;
+    background-color: #f7f7f7;
+    margin-bottom: 30px;
+}
+.service-box i {
+    color: #e74c3c;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+.service-box h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.service-box p {
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+.service-box a {
+    color: #e74c3c;
+    font-weight: bold;
+}
+.about-section {
+    padding: 60px 0;
+}
+.about-section h2 {
+    color: #e74c3c;
+    font-size: 18px;
+    font-weight: bold;
+}
+.about-section h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.about-section p {
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+.about-section ul {
+    padding-left: 0;
+    list-style: none;
+}
+.about-section ul li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+.about-section ul li span {
+    color: #e74c3c;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+.about-section ul li h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.about-section ul li p {
+    color: #7f8c8d;
+}
+.booking-section {
+    background: url('../images/service/carousel-bg-1.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 60px 0;
+}
+
+.booking-section .content {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    color: #fff;
+}
+
+.booking-section .form {
+    border-radius: 8px;
+    background: rgba(16, 18, 18, 0.9);
+    padding: 40px 30px;
+    color: #fff;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+.custom-input {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 6px;
+    border: none;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D'14'%20height%3D'14'%20xmlns%3D'http%3A//www.w3.org/2000/svg'%3E%3Cpath%20fill%3D'%23666'%20d%3D'M1%204l6%206%206-6z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 14px 14px;
+    padding-right: 40px;
+}
+
+select.custom-input {
+    cursor: pointer;
+}
+
+.custom-input:focus {
+    outline: none;
+    border: 2px solid #ff3333;
+    background-color: #fff;
+}
+
+.custom-input::placeholder {
+    color: #888;
+}
+
+.btn-custom {
+    width: 100%;
+    padding: 14px;
+    background-color: #ff3333;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: #cc0000;
+    cursor: pointer;
+}
