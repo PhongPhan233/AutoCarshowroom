@@ -11,7 +11,8 @@ class ChiTietPhieuDangKyModel extends Model
     use HasFactory;
     protected $table = 'chi_tiet_phieu_dang_ky';
     protected $primaryKey = 'ma_phieu';
-    protected $fillable = ['noi_dung', 'created_at', 'updated_at'];
+    public $timestamps = false;
+    protected $fillable = ['noi_dung'];
     
     public function Chitiet()
     {

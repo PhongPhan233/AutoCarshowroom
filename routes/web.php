@@ -11,15 +11,16 @@ use App\Http\Controllers\TaiKhoanController;
 use App\Http\Controllers\DatLichController;
 use App\Mail\DatLichServiceMail;
 use App\Models\DichVuModel;
+use Illuminate\Support\Facades\Mail;
 
 Route::get('/', function () {
     return redirect()->route('home'); // trang chủ
 });
+
 Route::prefix('Carshowroom')->group(function () {
     Route::get('/', function () {
         return view('index');
     })->name('home');
-
     Route::get('/form', function () {
         return view('laithu');
     })->name('form');
@@ -37,12 +38,27 @@ Route::prefix('Carshowroom')->group(function () {
         return 'Mail sent!';
     });
 
+    Route::prefix('admin')->group(function () {
+        Route::get('/phieu/{id}/detail', [DichVuController::class, 'showDetail'])->name('phieu.detail');
+        Route::get('/', [DichVuController::class, 'showAdmin'])->name('admin');
+        Route::get('/xe/tao-moi', [XeController::class, 'create'])->name('xe.create');
+        Route::post('/xe/luu', [XeController::class, 'store'])->name('xe.store');
+        Route::get('/quanlyxe', [XeController::class, 'DanhSachXeAdmin'])->name('quanlyxe');
+        Route::put('/phieu/{maPhieu}/update-trang-thai', [DichVuController::class, 'updateTrangThai'])->name('phieu.updateTrangThai');
+        Route::post('/phieu/{id}/update-trang-thai', [DichVuController::class, 'updateTrangThai_'])->name('phieu.updateTrangThai');
+        Route::get('/xe/{id}/edit', [XeController::class, 'edit'])->name('xe.edit');
+        Route::put('/xe.update/{id}', [XeController::class, 'update'])->name('xe.update');
+        Route::delete('/xe/{ma_xe}', [XeController::class, 'destroy'])->name('xe.destroy');
 
-
-
-
+        
+    });
+    Route::prefix('user')->group(function () {
+        Route::get('/phieu/{id}/detail', [DichVuController::class, 'showDetail'])->name('phieu.detail');
+        Route::get('/', [DichVuController::class, 'showUser'])->name('user');
+    });
     Route::get('/login', [TaiKhoanController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [TaiKhoanController::class, 'login'])->name('login.post');
+    Route::post('/send-otp', [TaiKhoanController::class, 'sendOtp'])->name('send.otp');
 
     Route::post('/register', [TaiKhoanController::class, 'register'])->name('register');
 
@@ -66,9 +82,9 @@ Route::prefix('Carshowroom')->group(function () {
     Route::get('/blog', function () {
         return view('baiviet');
     })->name('blog');
-    Route::get('/test', function () {
-        return view('test');
-    })->name('test');
+    Route::get('/glb-model', function () {
+        return view('glb-model');
+    })->name('glb-model');
 });
 
 

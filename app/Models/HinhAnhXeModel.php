@@ -12,7 +12,7 @@ class HinhAnhXeModel extends Model
     protected $table = "HinhAnhXe";
     protected $primaryKey = 'ma_xe';
     protected $keyType = 'string';
-    protected $fillable = ['mat_truoc', 'mat_ben', 'mat_sau', 'hinh_xe', 'created_at', 'updated_at'];
+    protected $fillable = ['ma_xe' ,'mat_truoc', 'mat_ben', 'mat_sau', 'hinh_xe', 'created_at', 'updated_at'];
     public function HinhAnh_xe()
     {
         return $this->belongsTo(XeModel::class, 'ma_xe', 'ma_xe');

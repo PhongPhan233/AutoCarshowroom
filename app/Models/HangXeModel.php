@@ -9,12 +9,13 @@ class HangXeModel extends Model
 {
     //
     use HasFactory;
+    public $timestamps = false;
     protected $table = 'hang_xe';
     protected $primaryKey = 'ma_hang';
     protected $keyType = 'string';
     protected $guard = 'ma_hang';
     protected $fillable = ['ten_hang', 'xuat_xu', 'updated_at','created_at'];
     
-
+    
     
 }

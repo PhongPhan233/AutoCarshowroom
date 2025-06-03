@@ -25,10 +25,10 @@ class HinhAnhXeSeeder extends Seeder
                 'updated_at'=>now(),],
             [
                 'ma_xe'=>2, 
-                'mat_truoc'=>'images/cars/Hyundai_Santa_FeV_MX5.jpg', 
-                'mat_ben'=>'images/cars/Hyundai_Santa_FeV_MX5.jpg', 
-                'mat_sau'=>'images/cars/Hyundai_Santa_FeV_MX5.jpg', 
-                'hinh_xe'=> 'images/cars/Hyundai_Santa_FeV_MX5.jpg', 
+                'mat_truoc'=>'images\cars\Mercedes\Mercesdes_AMG_GT\truoc.jpg', 
+                'mat_ben'=>'images\cars\Mercedes\Mercesdes_AMG_GT\bentrai.jpg', 
+                'mat_sau'=>'images\cars\Mercedes\Mercesdes_AMG_GT\sau.jpg', 
+                'hinh_xe'=> 'images\cars\Mercedes\Mercesdes_AMG_GT\hinhXe.jpg', 
                 'created_at'=>now(), 
                 'updated_at'=>now(),],
             [

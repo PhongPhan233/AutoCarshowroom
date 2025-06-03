@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
@@ -10,25 +11,48 @@
             <div class="form-container sign-up-container">
                 <form action="{{ route('register') }}" method="POST">
                 @csrf
-                    <h1>Create Account</h1>
+                    <h1></h1>
                     <div class="social-container">
                         <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
                         <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                     <span>or use your email for registration</span>
-                    <input type="text" name="username" placeholder="Name" required/>
+                    <input type="text" name="username" placeholder="Tên" required/>
                     <input type="email" name="email" placeholder="Email" required/>
-                    <input type="password" name="password" placeholder="Password" required/>
+                    <input type="password" name="password" placeholder="Mật khẩu" required/>
+
+                    <input type="password" name="confirmpassword" placeholder="Xác nhận mật khẩu" required/>
+                    
                     <button>Sign Up</button>
                 </form>
             </div>
+            <!-- Forget Password Form -->
+        <div class="form-container otp-request-container">
+            <form id="otpForm" action="{{ route("send.otp") }}">
+                @csrf
+                <h1>Xác thực OTP</h1>
+                <p>Nhập email để nhận mã OTP</p>
+                <input type="email" name="email" id="otpEmail" placeholder="Email" required />
+
+                <button type="button" id="sendOtpButton">Gửi mã OTP</button>
+                <div id="message" style="margin-top: 10px; color: green;"></div>
+
+                <p style="margin-top: 20px;">Nhập mã OTP bạn nhận được</p>
+                <input type="text" name="otp" placeholder="Mã OTP" required />
+
+                <button type="submit">Xác nhận OTP</button>
+
+                <button type="button" class="ghost" id="backToSignInFromOtpForm">Trở lại đăng nhập</button>
+            </form>
+        </div>
+
 
             <!-- Sign In Form -->
             <div class="form-container sign-in-container">
                 <form action="{{ route('login') }}" method="POST">
                     @csrf
-                    <h1>Sign in</h1>
+                    <h1>Đăng nhập</h1>
 
                     @if(session('success'))
                         <script>
@@ -48,11 +72,11 @@
                         <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
                         <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                     </div>
-                    <span>or use your account</span>
+                    <span>Hoặc sử dụng tài khoản của bạn</span>
                     <input type="email" name="email" placeholder="Email" required/>
-                    <input type="password" name="password" placeholder="Password" required/>
-                    <a href="#">Forgot your password?</a>
-                    <button type="submit">Sign In</button>
+                    <input type="password" name="password" placeholder="Mật khẩu" required/>
+                    <a href="#"id="forgotPassword">Quên mật khẩu?</a>
+                    <button type="submit">Đăng nhập</button>
                 </form>
             </div>
 
@@ -60,14 +84,14 @@
             <div class="overlay-container">
                 <div class="overlay">
                     <div class="overlay-panel overlay-left">
-                        <h1>Welcome Back!</h1>
-                        <p>To keep connected with us please login with your personal info</p>
-                        <button class="ghost" id="signIn">Sign In</button>
+                        <h1>Chào mừng tới Auto Carshowroom!</h1>
+                        <p>Để giữ liên hệ với chúng tôi bạn có thể đăng nhập thông tin của bạn</p>
+                        <button class="ghost" id="signIn">Đăng nhập</button>
                     </div>
                     <div class="overlay-panel overlay-right">
-                        <h1>Hello, Friend!</h1>
+                        <h1>Chào bạn!</h1>
                         <p>Enter your personal details and start journey with us</p>
-                        <button class="ghost" id="signUp">Sign Up</button>
+                        <button class="ghost" id="signUp">Đăng kí</button>
                     </div>
                 </div>
             </div>
@@ -108,4 +132,5 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
     <script src="{{ asset('js/map-custom.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
+
 @endsection

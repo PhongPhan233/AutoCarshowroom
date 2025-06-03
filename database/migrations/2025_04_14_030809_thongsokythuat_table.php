@@ -15,14 +15,14 @@ return new class extends Migration
         Schema::create('thong_so_ky_thuat', function (Blueprint $table) {
             $table->string('ma_xe')->primary();
             
-            $table->float('tong_chieu_dai');
-            $table->float('chieu_rong_tong_the');
-            $table->float('chieu_cao_tong_the');
-            $table->float('khoang_sang_gam_xe');
-            $table->float('ban_kinh');
-            $table->float('van_toc_toi_da');
-            $table->string('dong_co');
-            $table->float('khoi_luong');
+            $table->float('tong_chieu_dai')->nullable();
+            $table->float('chieu_rong_tong_the')->nullable();
+            $table->float('chieu_cao_tong_the')->nullable();
+            $table->float('khoang_sang_gam_xe')->nullable();
+            $table->float('ban_kinh')->nullable();
+            $table->float('van_toc_toi_da')->nullable();
+            $table->string('dong_co')->nullable();
+            $table->float('khoi_luong')->nullable();
             $table->foreign('ma_xe')->references('ma_xe')->on('xe');
             $table->timestamps();
 

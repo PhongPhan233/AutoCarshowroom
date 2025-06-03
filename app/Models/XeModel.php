@@ -10,7 +10,7 @@ class XeModel extends Model
     
     protected $primaryKey = 'ma_xe';
     protected $keyType = 'string';
-    protected $fillable = ['ten_xe', 'ma_loai', 'ma_kieu', 'ma_hang','nxs','mo_ta','created_at', 'updated_at'];
+    protected $fillable = ['ten_xe', 'ma_loai', 'ma_kieu', 'ma_hang', 'ma_dongxe', 'mo_rong','nsx','mo_ta','created_at', 'updated_at'];
 
     public function kieuXe()
     {
@@ -25,6 +25,10 @@ class XeModel extends Model
     public function hangXe()
     {
         return $this->belongsTo(HangXeModel::class, 'ma_hang', 'ma_hang');
+    }
+    public function dongXe()
+    {
+        return $this->hasOne(DongXeModel::class, 'ma_dongxe', 'ma_dongxe');
     }
     public function thongSoKyThuat()
     {

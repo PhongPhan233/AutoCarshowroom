@@ -94,6 +94,15 @@
                                                 <button type="submit" class="logout-btn">Đăng xuất</button>
 
                                             </form>
+                                            @if(Auth::user()->role == 'admin')
+                                                <form id="admin-form" action="{{ route('admin') }}" method="GET">
+                                                    <button type="submit" class="logout-btn">Quản lý dịch vụ</button>
+                                                </form>
+                                            @else
+                                            <form id="user-form" action="{{ route('user') }}" method="GET">
+                                                <button type="submit" class="logout-btn">Thông tin dịch vụ</button>
+                                            </form>
+                                            @endif
                                         </li>
                                     </ul>
                                 </li>

@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::dropIfExists('dung_tich');
         Schema::create('dung_tich', function (Blueprint $table) {
             $table->string('ma_xe')->primary();
-            $table->float('dung_tich_nhien_lieu');
-            $table->float('dung_tich_khoang_hanh_ly');
+            $table->float('dung_tich_nhien_lieu')->nullable();
+            $table->float('dung_tich_khoang_hanh_ly')->nullable();
             $table->foreign('ma_xe')->references('ma_xe')->on('xe');
         });
     }

@@ -47,7 +47,7 @@
     </div>
 
     <div class="item">
-      <img src="images/banner2.jpg" alt="Banner 2">
+      <img src="{{ asset('images/welcome-hero/welcome-banner.jpg') }}" alt="Banner 2">
       <div class="carousel-caption">
         <h3>Accelerate Into Spring</h3>
         <p>Without New Tariffs</p>

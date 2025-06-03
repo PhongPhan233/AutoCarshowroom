@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('id_user');
             $table->timestamp('ngay_lap');
             $table->string('ma_loai');
+            $table->string('trang_thai')->default('Chờ xử lý')->nullable();
             $table->timestamps();
         
             $table->foreign('id_user')->references('id_user')->on('tai_khoan');

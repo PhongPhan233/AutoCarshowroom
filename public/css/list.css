@@ -6,7 +6,7 @@
     background:url(../images/welcome-hero/listcar.jpg)no-repeat;
     background-position: center;
     background-size: cover;
-    z-index: 1;
+    z-index: 0;
  
 
     
@@ -20,7 +20,7 @@
     width: 100%;
     height: 100%;
     background: rgba(42, 45, 84, 0.6);
-    z-index: 1;
+    z-index: 0;
     
 }
 
@@ -70,173 +70,255 @@ body {
     font-family: Arial, sans-serif;
     color: #000;
 }
-.filter-section {
-    font-family: 'Arial', sans-serif;
-    background-color: #ffffff;
-    padding: 30px 20px;
-    border-radius: 0px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
-    border: 1px solid #f1f1f1; /* Thêm viền nhẹ để tạo sự phân cách */
+.search-title {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: bold;
+  text-align:left;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.filter-section h2 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #f1f1f1;
-    padding-bottom: 10px;
-    text-transform: uppercase;
-}
-
-.filter-info {
-
-    width: 100%;
-    text-align: left;
-}
-
-.filter-info ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.filter-info ul li {
-    font-size: 14px;
-    padding: 12px 20px;
-    border-bottom: 1px solid #ddd;
-    display: block;
-    width: 100%;
-    transition: all 0.3s ease;
-}
-
-.filter-info ul li:hover {
-    background-color: #f7f7f7;
-    cursor: pointer;
-}
-
-.filter-info ul li a {
-    color: #555;
-    text-decoration: none;
-    display: block;
-}
-
-.filter-info ul li a:hover {
-    color: #007bff;
-}
-
-.filter-info .dropdown-menu {
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 0px;
-}
-
-.filter-section .filter-group {
-    margin-bottom: 20px;
-}
-
-.filter-section .filter-group label {
-    font-size: 16px;
-    color: #333;
-    font-weight: 500;
-    cursor: pointer;
-    margin-left: 10px;
-}
-
-.filter-section .filter-group input[type="checkbox"],
-.filter-section .filter-group input[type="radio"] {
-    margin-right: 10px;
-    transform: scale(1.2);
-}
-
-.filter-section .btn-apply {
-    width: 100%;
-    padding: 12px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.filter-section .btn-apply:hover {
-    background-color: #0056b3;
-}
-
-.filter-section .btn-apply:active {
-    background-color: #003f7f;
-}
-
-.car-card {
-    font-family: Arial, sans-serif;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-.car-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-.car-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-.car-card h3 {
-    margin-top: 15px;
-}
-.car-card .filter {
-    margin-top: 10px;
-}
-.car-card .price {
-    margin-top: 15px;
-}
-.filter-section {
+.search-form-container {
     position: relative;
+  max-width: 1170px;
+  margin: -200px auto 40px;
+  background-color: #000000 !important;
+  padding: 20px 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  border-radius: 0;
+  z-index: 100;
+  margin-bottom: 100px;
+}
+.search-form-container .d-flex {
+  display: flex;
+  gap: 0px; 
+}
+.search-fields-wrapper {
+  width: 80%;
+  padding: 20px;
+  border-radius: 0px;
+  margin-top: 10px;
+}
+.search-fields-wrapper2 {
+  width: 20%;
+  padding: 20px;
+  border-radius: 0px;
+  margin-top: 10px;
 }
 
-.filter-section .dropdown-menu {
-    display: none; /* Mặc định ẩn */
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 999;
+.search-form label {
+  color: white;
+  font-size: 18px;
+  margin-bottom: 6px;
+  margin-top: 20px;
+  font-weight: 300; 
+}
+
+.search-form select,
+.search-form input[type=range] {
+    margin-left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  border: 1px solid #ffffff;
+  padding: 8px 12px;
+  color: #333;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+
+.price-range-text {
+  color: white;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.search-form input[type=range] {
+  margin-top: 4px;
+}
+
+.btn-search {
+  margin-top: 50%;
+  background-color: #ff9e2f !important;
+  color: white !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+  border: none !important;
+  height: 50px !important;
+  width: 200px !important;
+  border-radius: 0 !important;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding: 10px 30px !important; /* tăng padding ngang */
+}
+
+
+@media (max-width: 767px) {
+  .search-form-container {
+    margin: -40px 15px 20px 15px;
+    padding: 15px;
+  }
+  .price-range-text {
+    font-size: 11px;
+  }
+}
+
+
+.car-hover-card {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    background: #000000;
+    margin-bottom: 30px;
+    color: #f0f0f0;
+}
+.car-hover-card:hover {
+    transform: translateY(-5px); /* Nâng card lên khi hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Thêm bóng đổ khi hover */
+}
+.car-img {
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    border-radius: 0px;
-    padding: 10px 0;
-    transition: all 0.3s ease;
+    height: 230px;
+    object-fit: cover;
+    display: block;
 }
 
-.filter-section.active .dropdown-menu {
-    display: block; /* Khi có class 'active' thì dropdown hiển thị */
+.car-basic-info {
+    padding: 15px;
+    text-align: center;
 }
 
-.filter-section ul li:hover {
-    
-    background-color: #f0f0f0;
+.car-basic-info h4 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #f0f0f0;
 }
 
-.search-bar {
-    font-family: Arial, sans-serif;
+.car-basic-info p {
+    margin: 5px 0 0;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+/* Overlay khi hover */
+.car-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(37, 37, 37, 0.8);
+    color: white;
     display: flex;
-    justify-content: flex-end;
-    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    text-align: center;
+    padding: 20px;
 }
-.search-bar input[type="text"] {
-    width: 70%;
-    margin-right: 10px;
+
+.car-hover-card:hover .car-overlay {
+    opacity: 1;
 }
-.search-bar select {
-    width: auto;
+
+.car-overlay-content p {
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #f0f0f0;
 }
+.info-divider {
+    border: 0;
+    border-top: 1px solid #e6e6e6;
+    margin: 10px auto;
+    width: 80%;
+}
+.card-footer {
+  display: flex;
+  justify-content: space-between; /* hoặc flex-start nếu muốn sát trái */
+  align-items: center;
+  gap: 15px;
+  flex-wrap: nowrap;
+  padding: 10px 40px;
+  color: #ffffff;
+  font-size: 12px;
+  background-color: #000; /* giữ nguyên style bạn đang dùng */
+}
+
+.card-footer .item {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.card-footer .item i {
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+
+.btn-overlay {
+    display: inline-block !important;
+    padding: 12px 30px !important;
+    background-color: #ff6600 !important;
+    color: white !important;
+    border-radius: 0 !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    transition: background-color 0.3s ease !important, box-shadow 0.3s ease !important, transform 0.3s ease !important;
+    width: auto !important;
+    height: auto !important;
+    animation: shake 4s cubic-bezier(0.25, 0.1, 0.25, 1) infinite !important;
+    box-sizing: border-box !important;
+}
+
+.btn-overlay:hover {
+    transform: scale(1.05) !important;
+}
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-5px); 
+    }
+    40% {
+        transform: translateX(5px); 
+    }
+    60% {
+        transform: translateX(-5px); 
+    }
+    80% {
+        transform: translateX(5px); 
+    }
+    100% {
+        transform: translateX(0); 
+    }
+}
+
+.btn-overlay:hover {
+    background-color: #e55b00; 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    animation: none; 
+    transform: none; 
+
+/* Không thay đổi khi nhấn */
+.btn-overlay:active {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transform: none;
+}
+
+
+
 .header {
     text-align: center;
     margin-top: 200px;

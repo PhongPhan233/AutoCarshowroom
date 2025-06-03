@@ -25,3 +25,40 @@ document.addEventListener('click', (e) => {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.btn-readmore');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function () {
+            const description = this.previousElementSibling;
+            description.classList.toggle('show');
+
+            if (description.classList.contains('show')) {
+                this.textContent = "Thu gọn";
+            } else {
+                this.textContent = "Xem thêm";
+            }
+        });
+    });
+});
+
+
+
+    const toggleBtn = document.getElementById("toggleFilterBtn");
+    const filterBar = document.getElementById("filterBar");
+
+    toggleBtn.addEventListener("click", () => {
+        filterBar.classList.toggle("d-none");
+    });
+
+    // Xử lý lọc (tuỳ chọn)
+    document.querySelectorAll('.filter-control').forEach(item => {
+        item.addEventListener('change', () => {
+            const type = item.dataset.type;
+            const value = item.value;
+            console.log(`Filter: ${type} = ${value}`);
+            // TODO: Gửi AJAX hoặc lọc kết quả
+        });
+    });
+

@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('ma_phieu');
             
             $table->text('noi_dung')->nullable();
-            $table->timestamps();
-        
+            
+            
             $table->primary('ma_phieu');
             $table->foreign('ma_phieu')->references('ma_phieu')->on('phieu_dang_ky');
         });

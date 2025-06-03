@@ -11,8 +11,7 @@ class Car_360Model extends Model
     use HasFactory;
     protected $table = 'car360';
     protected $primaryKey = 'ma_xe';
-    protected $fillable = ['view', 'view_3D',
-    'created_at', 'updated_at'];
+    protected $fillable = ['ma_xe','view', 'view_3D','created_at', 'updated_at'];
 
     public function Xe_car360()
     {

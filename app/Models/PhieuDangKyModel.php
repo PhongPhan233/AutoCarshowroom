@@ -12,7 +12,7 @@ class PhieuDangKyModel extends Model
     protected $primaryKey = 'ma_phieu'  ;
     protected $guard = 'ma_phieu';
     public $timestamps = true;
-    protected $fillable = ['id_user', 'ngay_lap', 'ma_loai'];
+    protected $fillable = ['id_user', 'trang_thai', 'ngay_lap', 'ma_loai'];
 
     public function loaiDichVu()
     {
@@ -21,5 +21,9 @@ class PhieuDangKyModel extends Model
     public function taikhoan()
     {
         return $this->belongsTo(TaiKhoanModel::class, 'id_user','id_user');
+    }
+    public function chitietphieu()
+    {
+        return $this->hasOne(ChiTietPhieuDangKyModel::class, 'ma_phieu', 'ma_phieu');
     }
 }

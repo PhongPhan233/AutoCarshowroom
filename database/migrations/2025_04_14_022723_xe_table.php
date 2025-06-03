@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('ma_loai');
             $table->string('ma_kieu');
             $table->string('ma_hang');
+            $table->string('ma_dongxe');
+            $table->string('mo_rong')->nullable();
             $table->year('nsx');
             $table->text('mo_ta')->nullable();
             $table->timestamps();
@@ -26,6 +28,7 @@ return new class extends Migration
             $table->foreign('ma_loai')->references('ma_loai')->on('loai_xe');
             $table->foreign('ma_kieu')->references('ma_kieu')->on('kieu_xe');
             $table->foreign('ma_hang')->references('ma_hang')->on('hang_xe');
+            $table->foreign('ma_dongxe')->references('ma_dongxe')->on('dong_xe');
         });
         
     }

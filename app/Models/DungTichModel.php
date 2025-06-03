@@ -9,6 +9,7 @@ class DungTichModel extends Model
 {
     //
     use HasFactory;
+    public $timestamps = false;
     protected $table = 'dung_tich';
     protected $primaryKey = 'ma_xe';
     protected $keyType = 'string';

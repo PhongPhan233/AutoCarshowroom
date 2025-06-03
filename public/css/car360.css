@@ -1,3 +1,24 @@
 
 
 /* Responsive */
+#3d-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+    background-color: #fdfdfd;
+  }
+  
+  #back-btn {
+    position: fixed;
+    top: 110px;
+    left: 16px;
+    font-size: 20px;
+    z-index: 10001;
+    background: transparent;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
